@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot UI</title>
+</head>
+<body>
+  <h1>Chatbot UI</h1>
+  <div id="chat-window">
+    <p>{{ response }}</p>
+  </div>
+  <form method="POST" action="/">
+    <input type="text" name="user_input" placeholder="Type your message here..." required>
+    <button type="submit">Send</button>
+  </form>
+</body>
+</html>
