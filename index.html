@@ -4,11 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chatbot UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      text-align: center;
+    }
+    .chat-window {
+      background: #fff;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      height: 400px;
+      overflow-y: auto;
+      margin-bottom: 1rem;
+    }
+    .message {
+      margin: 0.5rem 0;
+      padding: 0.5rem;
+      border-radius: 5px;
+    }
+    .user-message {
+      background: #d1e7dd;
+      text-align: right;
+    }
+    .bot-response {
+      background: #f8d7da;
+      text-align: left;
+    }
+    form {
+      display: flex;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      margin-left: 0.5rem;
+      border: none;
+      background-color: #0d6efd;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Chatbot UI</h1>
-  <div id="chat-window">
-    <p>{{ response }}</p>
+  <h1>Chatbot Interface</h1>
+  <div class="chat-window" id="chat-window">
+    {% if response %}
+      <div class="bot-response message">{{ response }}</div>
+    {% else %}
+      <div class="bot-response message">Hello! How can I help you today?</div>
+    {% endif %}
   </div>
   <form method="POST" action="/">
     <input type="text" name="user_input" placeholder="Type your message here..." required>
